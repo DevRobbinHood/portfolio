@@ -1,6 +1,6 @@
 {
-    "name": "react-portfolio",
-    "homepage": "https://devrobbinhood.github.io/website-personal-branding",
+    "name": "portfolio",
+    "homepage": "https://devrobbinhood.github.io/portfolio",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
