@@ -36,7 +36,7 @@ const worktimeline = [
 const schoolTimeLine = [
     {
         school: "Focus Beroeps Academie",
-        type: "Media en vormgeving",
+        type: "ICT and Media Management",
         degree: "VMBO-TL",
         date: "2015-2019",
     },
@@ -96,12 +96,7 @@ const dataportfolio = [{
 const contactConfig = {
     YOUR_EMAIL: "tomasdejonge@gmail.com",
     YOUR_FONE: "+31 6 41889289",
-    description: "Bedankt voor je bezoek aan mijn portfolio! Heb je vragen, opmerkingen, of wil je samenwerken aan een project? Ik hoor graag van je.",
-    // creat an emailjs.com account
-    // check out this tutorial https://www.emailjs.com/docs/examples/reactjs/
-    YOUR_SERVICE_ID: "service_id",
-    YOUR_TEMPLATE_ID: "template_id",
-    YOUR_USER_ID: "user_id",
+    description: "Bedankt voor je bezoek aan mijn portfolio! Heb je vragen, opmerkingen, of wil je samenwerken aan een project? Ik hoor graag van je."
 };
 
 const socialprofils = {
