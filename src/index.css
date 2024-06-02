@@ -8,7 +8,7 @@
     --overlay-color: rgb(12 12 12 / 63%);
 }
 
-[data-theme="light"] {
+[data-theme='light'] {
     --bg-color: #ffffff;
     --primary-color: #ffffff;
     --secondary-color: #000;
@@ -71,7 +71,8 @@ p {
 }
 
 code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
 }
 
 .cursor__dot div {

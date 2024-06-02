@@ -36,7 +36,7 @@ const IsDevice = (() => {
   })()
 
 
-function useEventListener(eventName, handler, element = document) {
+const useEventListener = (eventName, handler, element = document) => {
     const savedHandler = useRef()
 
     useEffect(() => {
