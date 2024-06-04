@@ -19,7 +19,7 @@ export const ContactUs = () => {
     });
 
     const handleSubmit = event => {
-        vent.preventDefault();
+        event.preventDefault();
         setFormdata({ loading: true });
 
         const templateParams = {
