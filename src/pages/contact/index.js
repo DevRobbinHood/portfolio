@@ -82,11 +82,11 @@ export const ContactUs = () => {
                 <Row className="sec_sp">
                     <Col lg="12">
                         <Alert variant={formData.variant}
-                            className={`rounded-0 co_alert ${
-                                formData.show ? "d-block" : "d-none"
-                            }`}
-                            onClose={() => setFormdata({ show: false })}
-                            dismissible>
+                               className={`rounded-0 co_alert ${
+                                   formData.show ? "d-block" : "d-none"
+                               }`}
+                               onClose={() => setFormdata({ show: false })}
+                               dismissible>
 
                             <p className="my-0">{formData.alertmessage}</p>
                         </Alert>
@@ -117,39 +117,39 @@ export const ContactUs = () => {
 
                     <Col lg="7" className="d-flex align-items-center">
                         <form onSubmit={handleSubmit}
-                            className="contact__form w-100">
+                              className="contact__form w-100">
                             <Row>
                                 <Col lg="6" className="form-group">
                                     <input className="form-control"
-                                        id="name"
-                                        name="name"
-                                        placeholder="Naam"
-                                        value={formData.name || ""}
-                                        type="text"
-                                        required
-                                        onChange={handleChange} />
+                                           id="name"
+                                           name="name"
+                                           placeholder="Naam"
+                                           value={formData.name || ""}
+                                           type="text"
+                                           required
+                                           onChange={handleChange} />
                                 </Col>
 
                                 <Col lg="6" className="form-group">
                                     <input className="form-control rounded-0"
-                                        id="email"
-                                        name="email"
-                                        placeholder="Email"
-                                        type="email"
-                                        value={formData.email || ""}
-                                        required
-                                        onChange={handleChange} />
+                                           id="email"
+                                           name="email"
+                                           placeholder="Email"
+                                           type="email"
+                                           value={formData.email || ""}
+                                           required
+                                           onChange={handleChange} />
                                 </Col>
                             </Row>
 
-                            <textarea  className="form-control rounded-0"
-                                    id="message"
-                                    name="message"
-                                    placeholder="Bericht"
-                                    rows="5"
-                                    value={formData.message}
-                                    onChange={handleChange}
-                                    required></textarea>
+                            <textarea className="form-control rounded-0"
+                                      id="message"
+                                      name="message"
+                                      placeholder="Bericht"
+                                      rows="5"
+                                      value={formData.message}
+                                      onChange={handleChange}
+                                      required></textarea>
 
                             <br />
 
