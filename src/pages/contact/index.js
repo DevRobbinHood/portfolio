@@ -1,24 +1,24 @@
-import { useState } from "react";
-import { Helmet, HelmetProvider } from "react-helmet-async";
-import { Container, Row, Col, Alert } from "react-bootstrap";
-import * as emailjs from "emailjs-com";
+import { useState } from 'react';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { Container, Row, Col, Alert } from 'react-bootstrap';
+import * as emailjs from 'emailjs-com';
 
-import "./style.css";
-import { meta } from "../../content_option";
-import { contactConfig } from "../../content_option";
+import './style.css';
+import { meta } from '../../content_option';
+import { contactConfig } from '../../content_option';
 
 export const ContactUs = () => {
     const [formData, setFormdata] = useState({
-        email: "",
-        name: "",
-        message: "",
+        email: '',
+        name: '',
+        message: '',
         loading: false,
         show: false,
-        alertmessage: "",
-        variant: ""
+        alertmessage: '',
+        variant: '',
     });
 
-    const handleSubmit = event => {
+    const handleSubmit = (event) => {
         event.preventDefault();
         setFormdata({ loading: true });
 
@@ -29,34 +29,40 @@ export const ContactUs = () => {
             message: formData.message,
         };
 
-        emailjs.send(
+        emailjs
+            .send(
                 contactConfig.YOUR_SERVICE_ID,
                 contactConfig.YOUR_TEMPLATE_ID,
                 templateParams,
                 contactConfig.YOUR_USER_ID
-            ).then(result => {
-                console.log(result.text);
-                setFormdata({
-                loading: false,
-                alertmessage: "SUCCESS! ,Dankjewel voor je bericht",
-                variant: "success",
-                show: true,
-                });
-            }, error => {
-                console.log(error.text);
+            )
+            .then(
+                (result) => {
+                    console.log(result.text);
+                    setFormdata({
+                        loading: false,
+                        alertmessage: 'SUCCESS! ,Dankjewel voor je bericht',
+                        variant: 'success',
+                        show: true,
+                    });
+                },
+                (error) => {
+                    console.log(error.text);
 
-                setFormdata({
-                alertmessage: `Faild to send!,${error.text}`,
-                variant: "danger",
-                show: true,
-                });
+                    setFormdata({
+                        alertmessage: `Faild to send!,${error.text}`,
+                        variant: 'danger',
+                        show: true,
+                    });
 
-                document.getElementsByClassName("co_alert")[0].scrollIntoView();
-            }
-        );
+                    document
+                        .getElementsByClassName('co_alert')[0]
+                        .scrollIntoView();
+                }
+            );
     };
 
-    const handleChange = event => {
+    const handleChange = (event) => {
         setFormdata({
             ...formData,
             [event.target.name]: event.target.value,
@@ -67,99 +73,109 @@ export const ContactUs = () => {
         <HelmetProvider>
             <Container>
                 <Helmet>
-                    <meta charSet="utf-8" />
+                    <meta charSet='utf-8' />
                     <title>{meta.title} | Contact</title>
-                    <meta name="description" content={meta.description} />
+                    <meta name='description' content={meta.description} />
                 </Helmet>
 
-                <Row className="mb-5 mt-3 pt-md-3">
-                    <Col lg="8">
-                        <h1 className="display-4 mb-4">Contact mij</h1>
-                        <hr className="t_border my-4 ml-0 text-left" />
+                <Row className='mb-5 mt-3 pt-md-3'>
+                    <Col lg='8'>
+                        <h1 className='display-4 mb-4'>Contact mij</h1>
+                        <hr className='t_border my-4 ml-0 text-left' />
                     </Col>
                 </Row>
 
-                <Row className="sec_sp">
-                    <Col lg="12">
-                        <Alert variant={formData.variant}
-                               className={`rounded-0 co_alert ${
-                                   formData.show ? "d-block" : "d-none"
-                               }`}
-                               onClose={() => setFormdata({ show: false })}
-                               dismissible>
-
-                            <p className="my-0">{formData.alertmessage}</p>
+                <Row className='sec_sp'>
+                    <Col lg='12'>
+                        <Alert
+                            variant={formData.variant}
+                            className={`rounded-0 co_alert ${
+                                formData.show ? 'd-block' : 'd-none'
+                            }`}
+                            onClose={() => setFormdata({ show: false })}
+                            dismissible
+                        >
+                            <p className='my-0'>{formData.alertmessage}</p>
                         </Alert>
                     </Col>
 
-                    <Col lg="5" className="mb-5">
-                        <h3 className="color_sec py-4">Kom in contact</h3>
+                    <Col lg='5' className='mb-5'>
+                        <h3 className='color_sec py-4'>Kom in contact</h3>
                         <address>
-                            <strong>Email:</strong>{" "}
+                            <strong>Email:</strong>{' '}
                             <a href={`mailto:${contactConfig.YOUR_EMAIL}`}>
                                 {contactConfig.YOUR_EMAIL}
                             </a>
-
                             <br />
                             <br />
-
-                            {contactConfig.hasOwnProperty("YOUR_FONE") ? (
+                            {contactConfig.hasOwnProperty('YOUR_FONE') ? (
                                 <p>
-                                    <strong>Mobiel:</strong> {contactConfig.YOUR_FONE}
+                                    <strong>Mobiel:</strong>{' '}
+                                    {contactConfig.YOUR_FONE}
                                 </p>
                             ) : (
-                                ""
+                                ''
                             )}
                         </address>
 
                         <p>{contactConfig.description}</p>
                     </Col>
 
-                    <Col lg="7" className="d-flex align-items-center">
-                        <form onSubmit={handleSubmit}
-                              className="contact__form w-100">
+                    <Col lg='7' className='d-flex align-items-center'>
+                        <form
+                            onSubmit={handleSubmit}
+                            className='contact__form w-100'
+                        >
                             <Row>
-                                <Col lg="6" className="form-group">
-                                    <input className="form-control"
-                                           id="name"
-                                           name="name"
-                                           placeholder="Naam"
-                                           value={formData.name || ""}
-                                           type="text"
-                                           required
-                                           onChange={handleChange} />
+                                <Col lg='6' className='form-group'>
+                                    <input
+                                        className='form-control'
+                                        id='name'
+                                        name='name'
+                                        placeholder='Naam'
+                                        value={formData.name || ''}
+                                        type='text'
+                                        required
+                                        onChange={handleChange}
+                                    />
                                 </Col>
 
-                                <Col lg="6" className="form-group">
-                                    <input className="form-control rounded-0"
-                                           id="email"
-                                           name="email"
-                                           placeholder="Email"
-                                           type="email"
-                                           value={formData.email || ""}
-                                           required
-                                           onChange={handleChange} />
+                                <Col lg='6' className='form-group'>
+                                    <input
+                                        className='form-control rounded-0'
+                                        id='email'
+                                        name='email'
+                                        placeholder='Email'
+                                        type='email'
+                                        value={formData.email || ''}
+                                        required
+                                        onChange={handleChange}
+                                    />
                                 </Col>
                             </Row>
 
-                            <textarea className="form-control rounded-0"
-                                      id="message"
-                                      name="message"
-                                      placeholder="Bericht"
-                                      rows="5"
-                                      value={formData.message}
-                                      onChange={handleChange}
-                                      required></textarea>
+                            <textarea
+                                className='form-control rounded-0'
+                                id='message'
+                                name='message'
+                                placeholder='Bericht'
+                                rows='5'
+                                value={formData.message}
+                                onChange={handleChange}
+                                required
+                            ></textarea>
 
                             <br />
 
                             <Row>
-                                <Col lg="12"
-                                    className="form-group">
-
-                                    <button className="btn ac_btn"
-                                            type="submit">
-                                        {formData.loading ? "Sturen..." : "Verstuur"}
+                                <Col lg='12' className='form-group'>
+                                    <button
+                                        className='btn ac_btn'
+                                        type='submit'
+                                    >
+                                        {formData.loading
+                                            ? 'Sturen...'
+                                            : 'Verstuur'}
                                     </button>
                                 </Col>
                             </Row>
@@ -168,7 +184,7 @@ export const ContactUs = () => {
                 </Row>
             </Container>
 
-            <div className={formData.loading ? "loading-bar" : "d-none"}></div>
+            <div className={formData.loading ? 'loading-bar' : 'd-none'}></div>
         </HelmetProvider>
     );
 };
