@@ -11,6 +11,9 @@ const introdata = {
         first: 'Ik hou van coderen.',
         second: 'Ik codeer coole websites.',
         third: 'Ik ontwikkel mobiele apps.',
+        four: 'Maak een afspraak.',
+        five: 'Stuur een bericht via het contact formulier.',
+        six: 'Neem vandaag contact op met mij.',
     },
     description:
         'Ik ben Tomas, 22 jaar oud uit Barendrecht. Als ontwikkelaar in de softwaresector, werk ik aan innovatieve projecten en oplossingen.',
