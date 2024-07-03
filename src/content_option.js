@@ -88,6 +88,23 @@ const skills = [
     },
 ];
 
+const diensten = [
+    {
+        name: 'Mobile development',
+        value: 65,
+    },
+    {
+        name: 'Web development',
+        value: 80,
+    }
+];
+
+const datadiensten = {
+    over: 'Welkom! Ik ben gespecialiseerd in het ontwerpen en ontwikkelen van hoogwaardige web- en mobiele applicaties die naadloos inspelen op de behoeften van mijn klanten. Met een sterke focus op functionaliteit, gebruiksvriendelijkheid en esthetiek, streef ik ernaar om digitale oplossingen te bieden die zowel innovatief als betrouwbaar zijn.',
+    web: 'Of het nu gaat om een eenvoudige website of een complexe webapplicatie, ik ben bedreven in het bouwen van toepassingen die perfect aansluiten bij jouw bedrijfsdoelen. Mijn diensten omvatten alles van front-end tot back-end ontwikkeling, met behulp van de nieuwste technologieën en best practices in de industrie. Ik zorg ervoor dat jouw webapplicatie niet alleen mooi en intuïtief is, maar ook snel en veilig.',
+    mobile: 'In een wereld die steeds meer mobiel georiënteerd is, help ik je om jouw idee om te zetten in een krachtige mobiele applicatie. Of je nu een app wilt ontwikkelen voor iOS, Android of beide platforms, ik lever maatwerkoplossingen die perfect passen bij jouw visie en eisen. Met een gebruikersgerichte aanpak zorg ik ervoor dat jouw app een uitstekende gebruikerservaring biedt, van het ontwerp tot de uiteindelijke lancering in de app stores.'
+};
+
 const dataportfolio = [
     {
         img: 'https://scontent-ams2-1.xx.fbcdn.net/v/t1.6435-1/193175942_167015838769116_7486336575025233973_n.jpg?stp=c0.0.480.480a_dst-jpg_p480x480&_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_ohc=JSvhBMVzgC0Q7kNvgG-2AMI&_nc_ht=scontent-ams2-1.xx&oh=00_AYDxV9KnWw1_nq74c1kw7En_nmI2YNxYpkS7ErRs1k-e4g&oe=667EF8BA',
@@ -126,4 +143,6 @@ export {
     contactConfig,
     socialprofils,
     logotext,
+    diensten,
+    datadiensten
 };
